@@ -6,20 +6,7 @@ from nltk.corpus import wordnet as wn
 from nltk.corpus.reader.wordnet import Synset, Lemma
 import networkx as nx
 
-
-import os
-if not os.path.exists(os.path.expanduser("~/nltk_data/corpora/wordnet")):
-    import nltk
-    import ssl
-
-    try:
-        _create_unverified_https_context = ssl._create_unverified_context
-    except AttributeError:
-        pass
-    else:
-        ssl._create_default_https_context = _create_unverified_https_context
-
-    nltk.download("wordnet")
+import init
 
 def inspect(obj):
     a,b = st.beta_columns(2)
